@@ -1,0 +1,7 @@
+//5.Write a function expression that takes in two numbers and returns their sum.
+function SumOfTwoNumber(num1,num2){
+    return num1+num2;
+}
+const num1=2;
+const num2=3;
+console.log (SumOfTwoNumber(num1,num2));
