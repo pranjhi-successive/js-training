@@ -2,6 +2,6 @@
 function sumOfTwoNumber(num1,num2){
     return num1+num2;
 }
-const num1=2;
-const num2=3;
+const num1=2,
+      num2=3;
 console.log (sumOfTwoNumber(num1,num2));

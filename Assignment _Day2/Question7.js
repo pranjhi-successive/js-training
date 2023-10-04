@@ -24,8 +24,8 @@ console.log(`Square of ${input} is ${ans2}`) ;
 //5
 
 const sum= (first, second) => first + second;
-  const first= 25;
-const second = 25;
+const first= 25,
+      second = 25;
 const s = sum(first, second);
 console.log(s);
 
