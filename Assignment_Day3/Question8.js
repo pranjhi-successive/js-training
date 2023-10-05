@@ -3,9 +3,8 @@
 //for
 console.log ("USING FOR LOOP");
 function displayUsingForLoop(){
-    let i=1;
     let ans=" ";
-    for( i=1;i<=20;i++){
+    for( let i=1;i<=20;i++){
         ans+=i+" ";
     }console.log(ans);
 }
