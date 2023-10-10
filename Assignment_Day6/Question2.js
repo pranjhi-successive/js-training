@@ -1,0 +1,36 @@
+//Create a class Shape with properties width and height and methods getArea(). 
+//Create two classes Rectangle and Triangle that inherit from the Shape class and 
+//implement the getArea() method for their respective shapes.
+
+class shape{
+    constructor(width,height){
+        this.width=width;
+        this.height=height;
+    }
+    getArea(){
+        let a=this.width*this.height;
+        return a;
+    }
+}
+class rechtangle extends shape{
+    constructor(width,height){
+        super(width,height);
+    }
+    getArea(){
+        let a=this.width*this.height;
+        return a;
+    }
+}
+class triangle extends shape{
+    constructor(width,height){
+        super(width,height);
+    }
+    getArea(){
+        let a=this.width*this.height;
+        return a/2;
+    }
+}
+const rect = new rechtangle(10,20);
+const tri = new triangle(10,20);
+console.log("Area of a rectangle is:"+rect.getArea());
+console.log("Area of a triangle is:"+ tri.getArea());
