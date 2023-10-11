@@ -1,14 +1,18 @@
 //Write a program to find the last duplicate index in an array
-console.log("Index Of Last Duplicate Elements are:");
-function indexDuplicate(){
-    let ans=" ";
-    const array =[1,3,4,5,5,2,1,4,82,0,82];
-    for(let i=0;i<array.length;i++){
-        for(let j=i+1;j<array.length;j++){
-        if(array[i]==array[j]){
-            ans+=j+" ";
-        } 
-    } }
-    console.log(ans); 
-}
-indexDuplicate();
+function findLastDuplicate(arr) {
+    const lastIndex = {};
+    let lastDuplicate = null;
+
+    for (let i = 0; i < arr.length; i++) {
+      const element = arr[i];
+      if (lastIndex[element] !== undefined) {
+        lastDuplicate = { value: element, index: i };
+      }
+      lastIndex[element] = i;
+    }
+    return lastDuplicate;
+  }
+  const array = [1, 2, 3, 4, 2, 5, 6, 3, 7];
+  const lastDuplicate = findLastDuplicate(array);
+  
+  console.log("Last duplicate value is", lastDuplicate.value, "at index:", lastDuplicate.index);
