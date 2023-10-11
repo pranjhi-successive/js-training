@@ -7,7 +7,7 @@ function giveCount(inputString) {
       else countMap[inputString[i]] = 1
     }
     for (let c in countMap) {
-      output = output + c + countMap[c]
+      output +=  c + countMap[c]
     }
     return output
   }

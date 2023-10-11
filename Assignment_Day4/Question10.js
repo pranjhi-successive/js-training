@@ -17,8 +17,7 @@ function concatenateArrays(arrays) {
 
   //shorthand
   const arrayOfArrays1 = [[1, 2], [3, 4], [5, 6]].flat();
-  const concatenatedArray1 = concatenateArrays(arrayOfArrays);
-  console.log("concatenatedArray with shorthand",concatenatedArray1);
+  console.log("concatenatedArray with shorthand",arrayOfArrays1);
 
   
   

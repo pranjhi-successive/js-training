@@ -4,10 +4,12 @@ function findDuplicateIndices(arr) {
   const indices = {};
   for (let i = 0; i < arr.length; i++) {
     const element = arr[i];
-    if (indices[element] === undefined) {
+    if (!indices[element]) {
       indices[element] = [i];
     } else {
-      indices[element].push(i);
+      if (!indices[element].includes(i)) {
+        indices[element].push(i);
+      }
     }
   }
   const duplicateIndices = {};
@@ -19,6 +21,7 @@ function findDuplicateIndices(arr) {
   }
   return duplicateIndices;
 }
+
 const array = [1, 3, 4, 5, 5, 2, 1, 4, 82, 0, 82];
 const duplicateIndices = findDuplicateIndices(array);
 

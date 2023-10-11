@@ -1,27 +1,22 @@
 //Write a program to remove dupliacte elements from an array
 console.log("Remove  Duplicate Elements in long way:");
 function removeDuplicatesFromArray(inputArray) {
-    const uniqueArray = [];
-    
-    for (let i = 0; i < inputArray.length; i++) {
-      const currentItem = inputArray[i];
-      let isDuplicate = false;
-      for (let j = 0; j < uniqueArray.length; j++) {
-        if (currentItem === uniqueArray[j]) {
-          isDuplicate = true;
-          break;
-        }
-      }
-      if (!isDuplicate) {
-        uniqueArray.push(currentItem);
-      }
+  const uniqueArray = [];
+
+  for (let i = 0; i < inputArray.length; i++) {
+    const currentItem = inputArray[i];
+    if (!uniqueArray.includes(currentItem)) {
+      uniqueArray.push(currentItem);
     }
-    
-    return uniqueArray;
   }
+
+  return uniqueArray;
+}
+
 const inputArray = [1, 2, 2, 3, 4, 4, 5];
 const resultArray = removeDuplicatesFromArray(inputArray);
-console.log(resultArray); 
+console.log(resultArray);
+; 
 
   //SHORTHAND
 

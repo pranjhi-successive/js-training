@@ -20,7 +20,7 @@ console.log("intersection with shorthand");
 const array3 = [1, 2, 3, 4, 5];
 const array4 = [3, 4, 5, 6, 7];
 const filteredArray = array3.filter(value => array4.includes(value));
-const result1 = filteredArray;
-console.log(result1);
+console.log(filteredArray);
+
 
   
