@@ -6,41 +6,69 @@
 // 3.3 Create a class Teacher that inherits from the Person class and has a property subjectsTaught.
 // Override the farewell() method to include information about what the teacher teaches.
 
-class person{
-    constructor(name,age,genger,interests){
-        this.name=name;
-        this.age=age;
-        this.gender=genger;
-        this.interests=interests;  
-    }
-    greeting(){
-        return `Hi my name is ${this.name} and I am ${this.age} years old and my interests are ${this.interests}`;
-    }
-    farewell(){
-        return `Goodbye ${this.name}`;
-    }
+class Person {
+  constructor(name, age, gender, interests) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+  }
+
+  greeting = () => {
+    return `Hi, my name is ${this.name}, I am ${
+      this.age
+    } years old, and my interests are ${this.interests.join(", ")}.`;
+  };
+
+  farewell = () => {
+    return `Goodbye ${this.name}`;
+  };
 }
-class student extends person{
-    constructor(name,age,genger,interests,studies){
-        super(name,age,genger,interests);
-        this.studies=studies;
-    }
-    greeting(){
-        return `Hi my name is ${this.name} and I am ${this.age} years old and my interests are ${this.interests} and I am studying ${this.studies}`;
-    }
+
+class Student extends Person {
+  constructor(name, age, gender, interests, studies) {
+    super(name, age, gender, interests);
+    this.studies = studies;
+  }
+
+  greeting = () => {
+    return `Hi, my name is ${this.name}, I am ${
+      this.age
+    } years old, my interests are ${this.interests.join(
+      ", "
+    )}, and I am studying ${this.studies}.`;
+  };
 }
-class teacher extends student{
-    constructor(name,age,gender,interests,studies,subjectsTaught){
-        super(name,age,gender,interests,studies);
-        this.subjectsTaught=subjectsTaught;
-    }
-    farewell(){
-        return `Hi my name is ${this.name} and I am ${this.age} years old and my interests are ${this.interests} and I have studied ${this.studies} andI am teaching ${this.subjectsTaught}`;
-    }
+
+class Teacher extends Student {
+  constructor(name, age, gender, interests, studies, subjectsTaught) {
+    super(name, age, gender, interests, studies);
+    this.subjectsTaught = subjectsTaught;
+  }
+
+  farewell = () => {
+    return `Hi, my name is ${this.name}, I am ${
+      this.age
+    } years old, my interests are ${this.interests.join(
+      ", "
+    )}, I have studied ${this.studies}, and I am teaching ${
+      this.subjectsTaught
+    }.`;
+  };
 }
-const p1=new person("john",23,"male",["reading","coding"]);
+
+const p1 = new Person("John", 23, "male", ["reading", "coding"]);
 console.log(p1.greeting() + "\n");
-const p2=new student("john",23,"male",["reading","coding"],"maths");
-console.log(p2.greeting()+ "\n");
-const p3=new teacher("riya",20,"female",["reading","coding"],"B.tech", "physics");
+
+const p2 = new Student("John", 23, "male", ["reading", "coding"], "maths");
+console.log(p2.greeting() + "\n");
+
+const p3 = new Teacher(
+  "Riya",
+  20,
+  "female",
+  ["reading", "coding"],
+  "B.tech",
+  "physics"
+);
 console.log(p3.farewell());
