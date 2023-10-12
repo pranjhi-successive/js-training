@@ -20,7 +20,7 @@ function person() {
     id: 2,
   }];
   person.sort ((a,b)=>
-    a. age - b.age);
+    a.age - b.age);
     console.log(person);
 }
 
