@@ -1,28 +1,28 @@
 //Give an example of using multiple callback functions in a single function in JavaScript
-function performMultipleTasks(task1, task2, task3, finalCallback) {
-  console.log("Task 1 started");
-  task1();
+function performMultipleTasks(sum, subtract, multiply, finalCallback) {
+  console.log("Addition started");
+  sum();
   setTimeout(() => {
-    console.log("Task 2 started");
-    task2();
+    console.log("subtraction started");
+    subtract();
     setTimeout(() => {
-      console.log("Task 3 started");
-      task3();
-      console.log("All tasks completed");
+      console.log("multiplication started");
+      multiply();
+      console.log("all operations are executed successfully");
       finalCallback();
     }, 5000);
   }, 2000);
 }
-function task1() {
-  console.log("Task 1 completed");
+function sum() {
+  console.log("Addition completed");
 }
-function task2() {
-  console.log("Task 2 completed");
+function subtract() {
+  console.log("Subtraction completed");
 }
-function task3() {
-  console.log("Task 3 completed");
+function multiply() {
+  console.log("Multiplication completed");
 }
 function finalCallback() {
-  console.log("All tasks are done!");
+  console.log("All operations are done!");
 }
-performMultipleTasks(task1, task2, task3, finalCallback);
+performMultipleTasks(sum, subtract, multiply, finalCallback);

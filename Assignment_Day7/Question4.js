@@ -1,33 +1,37 @@
 //Write a program to implement a Promise-based rate limiter, that limits the number of concurrent requests to a certain number
-class RateLimiter {
-  constructor(limit) {
+class Limiter {
+  constructor(limit, time, timeLimit) {
     this.limit = limit;
-    this.queue = [];
+    this.initialValue = 0;
+    this.time = time;
+    this.timeLimit = timeLimit;
   }
-  async execute(task) {
-    return new Promise(async (resolve) => {
-      if (this.queue.length < this.limit) {
-        this.queue.push(task);
-      } else {
-        await Promise.all(this.queue);
-        this.queue = [];
-        this.queue.push(task);
+  getData() {
+    if (new Date().getTime() / 1000 - this.time > this.timeLimit) {
+      this.initialValue = 0;
+    }
+    return new Promise((resolve, reject) => {
+      if (this.initialValue == 0) {
+        this.time = new Date().getTime() / 1000;
       }
-      resolve(await task());
+      if (
+        new Date().getTime() / 1000 - this.time <= this.timeLimit &&
+        this.initialValue < this.limit
+      ) {
+        this.initialValue += 1;
+        resolve("Done");
+      } else {
+        reject("limit exausted");
+      }
     });
   }
 }
-const limiter = new RateLimiter(2);
-async function fetchData(url) {
-  console.log(`Fetching data from ${url}`);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  console.log(`Data fetched from ${url}`);
-}
-async function main() {
-  const urls = ['url1', 'url2', 'url3', 'url4', 'url5'];
 
-  for (const url of urls) {
-    await limiter.execute(() => fetchData(url));
-  }
-}
-main();
+const obj = new Limiter(5, 0, 10);
+const id = setInterval(() => {
+  console.log(obj.getData());
+}, 1000);
+
+setTimeout(() => {
+  clearInterval(id);
+}, obj.timeLimit * 1000);
