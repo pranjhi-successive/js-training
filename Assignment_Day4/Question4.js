@@ -1,15 +1,14 @@
 //Write a program to convert given string to upperCase OR lowerCase
-function convertToUpperCase(String) {
-    return String.toUpperCase();
+function convertToUpperCase(inputString) {
+    return inputString.toUpperCase();
+  }
+  function convertToLowerCase(inputString) {
+    return inputString.toLowerCase();
   }
   
-  function convertToLowerCase(String) {
-    return String.toLowerCase();
-  }
+  const inputString = 'Hello World';
   
-  const String = 'Hello World';
-  
-  const upperResult = convertToUpperCase(String);
-  const lowerResult = convertToLowerCase(String);
+  const upperResult = convertToUpperCase(inputString);
+  const lowerResult = convertToLowerCase(inputString);
   console.log('Uppercase:', upperResult);
   console.log('Lowercase:', lowerResult);

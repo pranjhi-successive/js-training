@@ -1,5 +1,5 @@
 //6. Write a program to find sum of an array
-console.log("Sum of an array is:");
+console.log("Sum of an array in longhand:");
 function sumOfArray(){
      let ans=0;
     const array=[1,2,5,7,9];
@@ -9,3 +9,8 @@ function sumOfArray(){
     console.log(ans);  
 }
 sumOfArray();
+
+//SHORTHAND
+console.log("Sum of an array in shorthand:");
+sum1=(a,b)=>(a+b);
+console.log(sum1(1,2));
