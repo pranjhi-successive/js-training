@@ -3,7 +3,7 @@
 function fetchData() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve("Data fetched successfully");
+        resolve("Data fetched ");
       }, 5000);
     });
   }
@@ -11,5 +11,5 @@ function fetchData() {
     .then(data => {
       console.log(data); 
     })
-    
+
   
