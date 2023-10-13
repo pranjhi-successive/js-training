@@ -1,5 +1,5 @@
 //Give an example of using multiple callback functions in a single function in JavaScript
-function performMultipleTasks(sum, subtract, multiply, finalCallback) {
+const performMultipleTasks = (sum, subtract, multiply, finalCallback) => {
   console.log("Addition started");
   sum();
   setTimeout(() => {
@@ -12,17 +12,22 @@ function performMultipleTasks(sum, subtract, multiply, finalCallback) {
       finalCallback();
     }, 5000);
   }, 2000);
-}
-function sum() {
+};
+
+const sum = () => {
   console.log("Addition completed");
-}
-function subtract() {
+};
+
+const subtract = () => {
   console.log("Subtraction completed");
-}
-function multiply() {
+};
+
+const multiply = () => {
   console.log("Multiplication completed");
-}
-function finalCallback() {
+};
+
+const finalCallback = () => {
   console.log("All operations are done!");
-}
+};
+
 performMultipleTasks(sum, subtract, multiply, finalCallback);

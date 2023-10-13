@@ -7,15 +7,18 @@
   </head>
   <body></body>
   <script>
-    const url = "https://catfact.ninja/fact";
-    async function parallelExecution() {
-      const promise1 = await fetch(url);
-      const promise2 = await fetch(url);
-      const promise3 = await fetch(url);
-      Promise.allSettled([promise1, promise2, promise3]).then((res) =>
-        console.log(res)
-      );
-    }
-    parallelExecution();
+  const url = "https://catfact.ninja/fact";
+
+const parallelExecution = async () => {
+  const promise1 = await fetch(url);
+  const promise2 = await fetch(url);
+  const promise3 = await fetch(url);
+  Promise.allSettled([promise1, promise2, promise3]).then((res) =>
+    console.log(res)
+  );
+};
+
+parallelExecution();
+
   </script>
 </html>

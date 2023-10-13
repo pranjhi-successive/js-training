@@ -8,11 +8,12 @@
   <body></body>
   <script>
     const url = "https://catfact.ninja/fact";
-    async function getData(callBack) {
-      const response = await fetch(url).then((data) => data.json());
-      callBack(response);
-    }
-    const callBack = (data) => console.log(data);
-    getData(callBack);
+const getData = async (callBack) => {
+  const response = await fetch(url).then((data) => data.json());
+  callBack(response);
+};
+const callBack = (data) => console.log(data);
+getData(callBack);
+
   </script>
 </html>
