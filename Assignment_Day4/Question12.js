@@ -2,7 +2,7 @@
 console.log("intersection with longhand");
 function findIntersection(arr1, arr2) {
   const intersection = [];
-  for (let i = 0; i < arr1.length; i++) {
+  for (let i in arr1 ) {
     const currentElement = arr1[i];
     if (arr2.includes(currentElement) && !intersection.includes(currentElement)) {
       intersection.push(currentElement);
