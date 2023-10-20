@@ -1,4 +1,4 @@
-<!-- 8. Create a function that fetches data from multiple APIs in parallel and then performs some operation on the combined data, using async/await. -->
+<!-- Fetch data from multiple APIs in parallel and perform an operation on the combined data using async/await -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,24 +10,17 @@
     const url1 = "https://jsonplaceholder.typicode.com/posts";
     const url2 = "https://jsonplaceholder.typicode.com/albums";
     const url3 = "https://jsonplaceholder.typicode.com/photos";
+
     const parallelExecution = async () => {
-  const promise1 = new Promise((resolve, reject) => {
-    resolve(fetch(url1).then((res) => res.json()));
-  });
-  const promise2 = new Promise((resolve, reject) => {
-    resolve(fetch(url2).then((res) => res.json()));
-  });
-  const promise3 = new Promise((resolve, reject) => {
-    resolve(fetch(url3).then((res) => res.json()));
-  });
+      const promise1 = fetch(url1).then((res) => res.json());
+      const promise2 = fetch(url2).then((res) => res.json());
+      const promise3 = fetch(url3).then((res) => res.json());
 
-  const allPromises = [promise1, promise2, promise3];
-  const [posts, albums, photos] = [...(await Promise.all(allPromises))];
+      const [posts, albums, photos] = await Promise.all([promise1, promise2, promise3]);
 
-  console.log(posts[0], albums[0], photos[0]);
-};
+      console.log(posts[0], albums[0], photos[0]);
+    };
 
-parallelExecution();
-
+    parallelExecution();
   </script>
 </html>
