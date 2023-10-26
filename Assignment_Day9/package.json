@@ -1,0 +1,14 @@
+{
+  "name": "assignment_day9",
+  "version": "1.0.0",
+  "description": "**1.** Create repo and add Readme.md file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
